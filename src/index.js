@@ -2,6 +2,7 @@ import 'babel-polyfill'
 
 
 import React from 'react'
+import Layout from 'material-ui/Layout';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { render } from 'react-dom'
@@ -17,12 +18,18 @@ const flashcardReducer = (state) => state
 const initialState = {}
 
 let store = createStore(flashcardReducer, initialState)
+
+import FCD_Flashcard from './app/flashcard'
 ///////////////
 
 render(
   <MuiThemeProvider>
     <Provider store={store}>
-      <div>hello world!</div>
+      <FCD_Flashcard
+         question="question"
+         answer="answer"
+         onCorrect={()=>console.log("yay")}
+         onIncorrect={()=>console.log("boo")} />
     </Provider>
   </MuiThemeProvider>,
   document.getElementById('fcd-root')

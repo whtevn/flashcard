@@ -4,18 +4,14 @@ import Button from 'material-ui/Button';
 
 const FCD_Answer = ( { message, onCorrect, onIncorrect } ) => {
   return (
-		<Layout container>
-			<Layout item xs={12}>
-				<Layout
-					container
-					justify="center"
-				>
-					{ message }
-					<Button raised contrast onClick={ onIncorrect} >Incorrect</Button>
-					<Button raised onClick={ onCorrect} >Correct</Button>
-				</Layout>
-			</Layout>
-		</Layout>
+    <Layout
+      container
+      justify="center"
+    >
+      { message }
+      <Button raised contrast onClick={ onIncorrect} >Incorrect</Button>
+      <Button raised onClick={ onCorrect} >Correct</Button>
+    </Layout>
 	)
 };
 export default FCD_Answer;
