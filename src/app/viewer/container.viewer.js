@@ -1,6 +1,7 @@
+import { Map } from 'immutable';
 import { connect } from 'react-redux';
 import { default as Component } from './component.viewer';
-import { Actions } from './actions.viewer';
+import * as Actions from './actions.viewer';
 
 // connect component to store
 function mapStateToProps(state, ownprops){
@@ -16,9 +17,8 @@ function mapStateToProps(state, ownprops){
 function mapDispatchToProps(dispatch, ownprops){
   return {
     onRecord: (selected, result) => {
-      dispatch(Actions.Record({
-        selected: result
-      }));
+      const entry = Map([[selected, result]])
+      dispatch(Actions.Record( entry ));
     }
   }
 }

@@ -1,6 +1,6 @@
 const Type = "Flashcard Viewer"
 export const RECORD = `${Type} RECORD`;
-export const record = ( payload ) => {
+export const Record = ( payload ) => {
   return {
     type: RECORD,
     payload

@@ -7,11 +7,11 @@ class FCD_Viewer extends React.Component {
     const cards=this.props.cards;
     const selected=this.props.selected;
     const record=this.props.onRecord;
-    return <FCD_Flashcard
+    return (selected < cards.size) ? (<FCD_Flashcard
                question={cards.getIn([selected, "question"])}
                answer={cards.getIn([selected, "answer"])}
                onCorrect={()=>record(selected, "correct")}
-               onIncorrect={()=>record(selected, "incorrect")} />
+               onIncorrect={()=>record(selected, "incorrect")} />):(<h1>Stack Complete</h1>)
 	}
 };
 

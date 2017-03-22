@@ -15,7 +15,7 @@ export const Reducer = (state = initialState, action) => {
       // expects { flashcard_id: "CORRECT" }
       const next = state.getIn(['data', 'selected'])+1;
       return state
-              .mergeIn(['data', 'results'], payload)
+              .mergeIn(['data', 'results'], action.payload)
               .setIn(['data', 'selected'], next)
     default:
       return state;
