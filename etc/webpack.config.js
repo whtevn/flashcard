@@ -7,17 +7,17 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
-    './src/index'
+    path.resolve(__dirname, '../src/index.js')
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js'],
     alias: {
-      'api': path.resolve(__dirname, './src/globals/api.js')
+      'api': path.resolve(__dirname, '../src/globals/api.js')
     }
   },
   plugins: [
@@ -26,8 +26,9 @@ module.exports = {
       'api': 'api'
     }),
     new HtmlWebpackPlugin({
-      title: 'Flashcard Duel',
+      title: 'Flashcard Dueler',
       filename: 'index.html',
+      template: path.join(__dirname, '../src/index.html')
     }),
   ],
   module: {
@@ -35,7 +36,7 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel-loader'],
       exclude: /node_modules/,
-      include: __dirname
+      include: path.resolve(__dirname, '../src/')
     },
 	  {
 			test: /\.scss$/,

@@ -6,14 +6,15 @@
   "scripts": {
     "test": "NODE_ENV=testing mocha $(find src -name 'spec.*.js') --compilers js:babel-core/register --colors --recursive",
     "clean": "rm -rf build",
-    "build": "webpack --config ./webpack.prod.config.js --progress --colors -p",
+    "build": "webpack --config ./etc/webpack.prod.config.js --progress --colors -p",
     "build:clean": "npm run clean && npm run build",
     "build:prod": "NODE_ENV=production npm run build",
     "build:prod:clean": "npm run clean && npm run build:prod",
     "bump": "devup",
     "bump:minor": "devup -t minor",
     "bump:major": "devup -t major",
-    "changelog": "devup changelog"
+    "changelog": "devup changelog",
+    "start": "node ./etc/server.js"
   },
   "keywords": [],
   "author": "",
