@@ -1,11 +1,10 @@
 import React from 'react'
-import Layout from 'material-ui/Layout';
 
-const FCD_StackListElement = ( { name } ) => {
+const FCD_StackListElement = ( { name, id, onSelect } ) => {
   return (
-    <Layout>
-      { name }
-    </Layout>
+    <div>
+      <a href="#" onClick={ ()=>onSelect(id) }> { name } </a>
+    </div>
 	)
 };
 export default FCD_StackListElement;

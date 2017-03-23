@@ -16,18 +16,6 @@ function mapStateToProps(state, ownprops){
   }
 }
 
-function mapDispatchToProps(state){
-  return {
-    onSelect: (selected) => {
-      dispatch(Actions.Select( selected ));
-    },
-    onRecord: (selected, result) => {
-      const entry = Map([[selected, result]])
-      dispatch(Actions.Record( entry ));
-    }
-  }
-}
-
 const FCD_StackNavigator = connect(mapStateToProps)(Component);
 export default FCD_StackNavigator;
 

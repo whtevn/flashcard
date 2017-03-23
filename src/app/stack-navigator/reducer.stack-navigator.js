@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
 import { combineReducers } from 'redux'
-import * as Actions from './actions.stack-navigator';
 import { Reducer as stackListReducer, initialState as stackListState } from '../stack-list/reducer.stack-list';
 import { Reducer as viewerReducer, initialState as viewerState } from '../viewer/reducer.viewer';
 

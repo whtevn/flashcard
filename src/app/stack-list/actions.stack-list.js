@@ -1,4 +1,4 @@
-const Type = "Stack Navigator"
+const Type = "Stack List"
 export const SELECT = `${Type} SELECT`;
 export const Select = ( payload ) => {
   return {
@@ -6,4 +6,5 @@ export const Select = ( payload ) => {
     payload
   }
 }
+
 

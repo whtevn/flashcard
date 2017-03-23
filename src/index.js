@@ -2,12 +2,13 @@ import 'babel-polyfill'
 
 
 import React from 'react'
-import Layout from 'material-ui/Layout';
+import Layout from 'material-ui/Layout/';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import  logger  from 'redux-logger'
 
 injectTapEventPlugin();
 // Needed for onTouchTap
@@ -40,7 +41,7 @@ const testState = initialState.stack
                     .setIn(['data', 'stacks'], stacks)
                     .setIn(['data', 'selected'], 0)
 
-let store = createStore(Reducer, {stack: testState, viewer:viewState})
+let store = createStore(Reducer, {stack: testState, viewer:viewState}, applyMiddleware(logger()))
 
 import FCD_StackNavigator from './app/stack-navigator'
 ////////////////////////////////////////////////////////
