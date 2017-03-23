@@ -22,11 +22,11 @@ import { List, fromJS, Map } from 'immutable';
 import { Reducer, initialState } from './app/stack-navigator';
 
 const stack_cards = List()
-                      .push({question: "q 1", answer: "a 1"})
-                      .push({question: "q 2", answer: "a 2"})
-                      .push({question: "q 3", answer: "a 3"})
-                      .push({question: "q 4", answer: "a 4"})
-                      .push({question: "q 5", answer: "a 5"})
+                      .push(Map({question: "q 1", answer: "a 1"}))
+                      .push(Map({question: "q 2", answer: "a 2"}))
+                      .push(Map({question: "q 3", answer: "a 3"}))
+                      .push(Map({question: "q 4", answer: "a 4"}))
+                      .push(Map({question: "q 5", answer: "a 5"}))
 const stacks = fromJS([
   {name: 'first stack' , key: 0, cards: stack_cards },
   {name: 'second stack', key: 1, cards: stack_cards },
