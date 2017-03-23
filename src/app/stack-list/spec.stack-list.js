@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {default as Component} from './component.stack-list.js';
+import {default as Component} from './component.stack-list';
 import * as Container from './container.stack-list';
 import FCD_StackList from './';
 import { List, Map, fromJS } from 'immutable';
