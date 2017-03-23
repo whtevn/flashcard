@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack list renders correctly 1`] = `
+<div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      first stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      second stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      third stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      fourth stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      fifth stack
+       
+    </a>
+  </div>
+</div>
+`;
