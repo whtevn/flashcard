@@ -14,6 +14,9 @@ function mapStateToProps(state, ownprops){
 
 function mapDispatchToProps(dispatch){
   return {
+    onCreate: (name, key) => {
+      dispatch(Actions.Create( fromJS({name, cards:[], key }) ));
+    },
     onSelect: (selected, cards) => {
       dispatch(Actions.Select( fromJS({selected, cards}) ));
     }
