@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Flash card answer renders correctly 1`] = `
+exports[`Flash card question renders correctly 1`] = `
 <div>
   question
 </div>
