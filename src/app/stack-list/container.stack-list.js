@@ -1,4 +1,4 @@
-import { Map } from 'immutable';
+import { fromJS } from 'immutable';
 import { connect } from 'react-redux';
 import { default as Component } from './component.stack-list';
 import * as Actions from './actions.stack-list';
@@ -14,8 +14,8 @@ function mapStateToProps(state, ownprops){
 
 function mapDispatchToProps(dispatch){
   return {
-    onSelect: (selected) => {
-      dispatch(Actions.Select( selected ));
+    onSelect: (selected, cards) => {
+      dispatch(Actions.Select( fromJS({selected, cards}) ));
     }
   }
 }

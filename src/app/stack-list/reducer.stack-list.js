@@ -11,7 +11,7 @@ export const initialState = fromJS({
 export const Reducer = (state = initialState, action) => {
   switch (action.type) {
     case Actions.SELECT:
-      return state.setIn(['data', 'selected'], action.payload);
+      return state.setIn(['data', 'selected'], action.payload.get('selected'));
     default:
       return state;
   }

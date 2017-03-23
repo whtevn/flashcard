@@ -45,11 +45,11 @@ import FCD_StackNavigator from './app/stack-navigator'
 ////////////////////////////////////////////////////////
 
 render(
-  <MuiThemeProvider>
     <Provider store={store}>
-      <FCD_StackNavigator />
-    </Provider>
-  </MuiThemeProvider>,
+      <MuiThemeProvider>
+        <FCD_StackNavigator />
+      </MuiThemeProvider>
+    </Provider>,
   document.getElementById('fcd-root')
 )
 
