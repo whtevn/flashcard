@@ -5,6 +5,7 @@ import * as Actions from './actions.viewer';
 
 // connect component to store
 function mapStateToProps(state, ownprops){
+  state = state.viewer || state
   console.log(state.toJS());
   return {
     // cards: getVisibleCards(state.cards, state.visibilityFilter)

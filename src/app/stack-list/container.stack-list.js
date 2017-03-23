@@ -4,6 +4,7 @@ import { default as Component } from './component.stack-list';
 
 // connect component to store
 function mapStateToProps(state, ownprops){
+  state = state.stack || state
   console.log(state.toJS());
   return {
     // cards: getVisibleCards(state.cards, state.visibilityFilter)
