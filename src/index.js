@@ -1,6 +1,5 @@
 import 'babel-polyfill'
 
-
 import React from 'react'
 import Layout from 'material-ui/Layout/';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -21,7 +20,6 @@ injectTapEventPlugin();
 
 import { List, fromJS, Map } from 'immutable';
 import { Reducer, initialState } from './app/stack-navigator';
-import { initialState as viewState } from './app/viewer';
 
 const stack_cards = List()
                       .push({question: "q 1", answer: "a 1"})
@@ -37,11 +35,11 @@ const stacks = fromJS([
   {name: 'fifth stack' , key: 4, cards: stack_cards }
 ])
 
-const testState = initialState.stack
-                    .setIn(['data', 'stacks'], stacks)
-                    .setIn(['data', 'selected'], 0)
+const testState = Object.assign({}, initialState, {stacks: initialState.stacks.setIn(['data', 'stacks'], stacks).setIn(['data', 'selected'], 0)})
 
-let store = createStore(Reducer, {stack: testState, viewer:viewState}, applyMiddleware(logger()))
+let store = createStore(Reducer, testState, applyMiddleware(logger({
+  stateTransformer: (s) => Map(s).toJS()
+})))
 
 import FCD_StackNavigator from './app/stack-navigator'
 ////////////////////////////////////////////////////////

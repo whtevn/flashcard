@@ -5,7 +5,7 @@ import * as Actions from './actions.stack-list';
 
 // connect component to store
 function mapStateToProps(state, ownprops){
-  state = state.stack || state
+  state = state.stacks || state
   return {
     stacks: state.getIn(['data', 'stacks']),
     selected: state.getIn(['data', 'selected'])

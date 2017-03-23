@@ -1,4 +1,5 @@
 import * as Actions from './actions.viewer'
+import * as StackListActions from '../stack-list/actions.stack-list'
 import { fromJS } from 'immutable';
 
 export const initialState = fromJS({
