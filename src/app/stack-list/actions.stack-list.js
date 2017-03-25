@@ -15,4 +15,10 @@ export const Create = ( payload ) => {
   }
 }
 
-
+export const UPDATE = `${Type} UPDATE`;
+export const Update = ( payload ) => {
+  return {
+    type: UPDATE,
+    payload
+  }
+}
