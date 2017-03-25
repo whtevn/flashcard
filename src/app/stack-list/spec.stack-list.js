@@ -1,9 +1,11 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {default as Component} from './component.stack-list';
 import * as Container from './container.stack-list';
-import FCD_StackList from './';
+import FCD_StackList, { initialState } from './';
 import { List, Map, fromJS } from 'immutable';
 import { Reducer } from './reducer.stack-list';
 import * as Actions from './actions.stack-list';
@@ -12,6 +14,7 @@ const mockFn = jest.fn();
 describe("The stack list", ()=>{
   let stackCards;
   let stackList;
+  let store;
   beforeEach(()=>{
     stackCards = List()
                   .push(Map({question: "q 1", answer: "a 1"}))
@@ -26,14 +29,17 @@ describe("The stack list", ()=>{
       {name: 'fourth stack', key: 3, cards: stackCards },
       {name: 'fifth stack' , key: 4, cards: stackCards }
     ])
+    store = createStore(Reducer, {stacks: stackList});
   })
 
   describe("component", ()=>{
     test('Stack list renders correctly', () => {
       const tree = renderer.create(
-          <MuiThemeProvider>
-            <Component stacks={stackList} onSelect={()=>{}} />
-          </MuiThemeProvider>
+            <Provider store={store}>
+              <MuiThemeProvider>
+                <Component stacks={stackList} onSelect={()=>{}} />
+              </MuiThemeProvider>
+            </Provider>
           ).toJSON();
       expect(tree).toMatchSnapshot();
     });

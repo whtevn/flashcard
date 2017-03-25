@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Layout from 'material-ui/Layout';
 import FCD_StackList from '../stack-list';
 import FCD_Viewer from '../viewer';
+import FCD_StackAdder from '../stack-adder';
 import { Reducer, initialState } from '.';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
@@ -45,6 +46,7 @@ class FCD_StackNavigator extends React.Component {
     <Provider store={store}>
       <MuiThemeProvider>
         <Layout>
+          < FCD_StackAdder />
           < FCD_StackList />
           < FCD_Viewer />
         </Layout>
