@@ -4,7 +4,7 @@ import { default as Component } from './component.stack-list';
 import * as Actions from './actions.stack-list';
 
 // connect component to store
-function mapStateToProps(state, ownprops){
+export function mapStateToProps(state, ownprops){
   state = state.stacks || state
   return {
     stacks: state.getIn(['data', 'stacks']),
@@ -12,13 +12,16 @@ function mapStateToProps(state, ownprops){
   }
 }
 
-function mapDispatchToProps(dispatch){
+export function mapDispatchToProps(dispatch){
   return {
     onCreate: (name, key) => {
       dispatch(Actions.Create( fromJS({name, cards:[], key }) ));
     },
     onSelect: (selected, cards) => {
       dispatch(Actions.Select( fromJS({selected, cards}) ));
+    },
+    onCreate: (stack) => {
+      dispatch(Actions.Create( fromJS({stack}) ));
     }
   }
 }

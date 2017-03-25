@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stack list element renders correctly 1`] = `
+<div>
+  <a
+    href="#"
+    onClick={[Function]}
+  >
+     
+    element name
+     
+  </a>
+</div>
+`;

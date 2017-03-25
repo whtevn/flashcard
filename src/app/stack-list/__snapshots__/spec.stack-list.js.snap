@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The stack list component Stack list renders correctly 1`] = `
+<div>
+  <form>
+    <input
+      name="name"
+      placeholder="stack name"
+      type="text"
+    />
+    <button
+      className="MuiButtonBase-buttonBase-3170508663 MuiButton-root-3593367901 MuiButton-raised-1110834863"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label-49836587"
+      >
+        Create Stack
+      </span>
+      <span
+        className="MuiTouchRipple-root-3868442396"
+      />
+    </button>
+  </form>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      first stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      second stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      third stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      fourth stack
+       
+    </a>
+  </div>
+  <div>
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      fifth stack
+       
+    </a>
+  </div>
+</div>
+`;
+
+exports[`The stack list container mapping dispatch to props when a stack is selected should dispatch the select action 1`] = `
+Array [
+  Array [
+    Object {
+      "payload": Object {
+        "cards": Array [
+          Object {
+            "answer": "a 1",
+            "question": "q 1",
+          },
+          Object {
+            "answer": "a 2",
+            "question": "q 2",
+          },
+          Object {
+            "answer": "a 3",
+            "question": "q 3",
+          },
+          Object {
+            "answer": "a 4",
+            "question": "q 4",
+          },
+          Object {
+            "answer": "a 5",
+            "question": "q 5",
+          },
+        ],
+        "selected": 0,
+      },
+      "type": "Stack List SELECT",
+    },
+  ],
+]
+`;

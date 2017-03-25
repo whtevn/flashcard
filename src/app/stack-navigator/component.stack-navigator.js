@@ -1,14 +1,55 @@
 import React from 'react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Layout from 'material-ui/Layout';
 import FCD_StackList from '../stack-list';
 import FCD_Viewer from '../viewer';
+import { Reducer, initialState } from '.';
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import  logger  from 'redux-logger'
+
+/////////////////// TEMPORARY /////////////////////////
+// loading procedure for development purposes
+// need to start making tests
+
+import { List, fromJS, Map } from 'immutable';
+
+const stack_cards = List()
+                      .push(Map({question: "q 1", answer: "a 1"}))
+                      .push(Map({question: "q 2", answer: "a 2"}))
+                      .push(Map({question: "q 3", answer: "a 3"}))
+                      .push(Map({question: "q 4", answer: "a 4"}))
+                      .push(Map({question: "q 5", answer: "a 5"}))
+const stacks = fromJS([
+  {name: 'first stack' , key: 0, cards: stack_cards },
+  {name: 'second stack', key: 1, cards: stack_cards },
+  {name: 'third stack' , key: 2, cards: stack_cards },
+  {name: 'fourth stack', key: 3, cards: stack_cards },
+  {name: 'fifth stack' , key: 4, cards: stack_cards }
+])
+
+const testState = Object.assign({}, initialState, {stacks: initialState.stacks.setIn(['data', 'stacks'], stacks).setIn(['data', 'selected'], 0)})
+let store = createStore(Reducer, testState, applyMiddleware(logger({
+  stateTransformer: (s) => Map(s).toJS()
+})))
+////////////////////////////////////////////////////////*
+//let store = createStore(Reducer, applyMiddleware(logger({
+//  stateTransformer: (s) => Map(s).toJS()
+//})))
+////////////////////////////////////////////////////////
+
 
 class FCD_StackNavigator extends React.Component {
   render (){
     return (
-      <div>
-        < FCD_StackList />
-        < FCD_Viewer />
-      </div>
+    <Provider store={store}>
+      <MuiThemeProvider>
+        <Layout>
+          < FCD_StackList />
+          < FCD_Viewer />
+        </Layout>
+      </MuiThemeProvider>
+    </Provider>
     )
   }
 }
