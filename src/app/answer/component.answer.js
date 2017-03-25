@@ -6,11 +6,16 @@ class FCD_Answer extends React.Component {
     const message = this.props.message;
     const onCorrect = this.props.onCorrect;
     const onIncorrect = this.props.onIncorrect;
+    const buttons = (onCorrect&&onIncorrect)?(
+      <div>
+        <Button raised contrast onClick={ onIncorrect } >Incorrect</Button>
+        <Button raised onClick={ onCorrect } >Correct</Button>
+      </div>
+    ):undefined;
     return (
       <div >
         { message }
-        <Button raised contrast onClick={ onIncorrect } >Incorrect</Button>
-        <Button raised onClick={ onCorrect } >Correct</Button>
+        { buttons }
       </div>
     )
   }

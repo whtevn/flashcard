@@ -2,7 +2,7 @@ import React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Layout from 'material-ui/Layout';
 import FCD_StackList from '../stack-list';
-import FCD_Viewer from '../viewer';
+import FCD_CardList from '../card-list';
 import FCD_StackAdder from '../stack-adder';
 import { Reducer, initialState } from '.';
 import { createStore, applyMiddleware } from 'redux'
@@ -16,11 +16,11 @@ import  logger  from 'redux-logger'
 import { List, fromJS, Map } from 'immutable';
 
 const stack_cards = List()
-                      .push(Map({question: "q 1", answer: "a 1"}))
-                      .push(Map({question: "q 2", answer: "a 2"}))
-                      .push(Map({question: "q 3", answer: "a 3"}))
-                      .push(Map({question: "q 4", answer: "a 4"}))
-                      .push(Map({question: "q 5", answer: "a 5"}))
+                      .push(Map({key: 0, question: "q 1", answer: "a 1"}))
+                      .push(Map({key: 1, question: "q 2", answer: "a 2"}))
+                      .push(Map({key: 2, question: "q 3", answer: "a 3"}))
+                      .push(Map({key: 3, question: "q 4", answer: "a 4"}))
+                      .push(Map({key: 4, question: "q 5", answer: "a 5"}))
 const stacks = fromJS([
   {name: 'first stack' , key: 0, cards: stack_cards },
   {name: 'second stack', key: 1, cards: stack_cards },
@@ -48,7 +48,7 @@ class FCD_StackNavigator extends React.Component {
         <Layout>
           < FCD_StackAdder />
           < FCD_StackList />
-          < FCD_Viewer />
+          < FCD_CardList />
         </Layout>
       </MuiThemeProvider>
     </Provider>
