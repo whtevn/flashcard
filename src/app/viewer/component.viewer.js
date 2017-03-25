@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from 'material-ui/Layout';
 import FCD_Flashcard from '../flashcard'
 
 class FCD_Viewer extends React.Component {

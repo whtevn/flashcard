@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field } from 'redux-form'
-import Button from 'material-ui/Button';
+import { RaisedButton } from 'material-ui';
 
 class FCD_StackAdder extends React.Component {
   render (){
@@ -8,7 +8,7 @@ class FCD_StackAdder extends React.Component {
     return (
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field type="text" name="name" placeholder="stack name" component="input" />
-        <Button raised onClick={ handleSubmit(onSubmit) }>Create Stack</Button>
+        <RaisedButton onClick={ handleSubmit(onSubmit) }>Create Stack</RaisedButton>
       </form>
     )
   }

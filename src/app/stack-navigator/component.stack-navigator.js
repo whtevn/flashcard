@@ -1,12 +1,13 @@
 import React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Layout from 'material-ui/Layout';
+import { Layout } from 'material-ui';
 import FCD_StackList from '../stack-list';
 import FCD_CardList from '../card-list';
 import FCD_StackAdder from '../stack-adder';
 import FCD_StackUpdateButton from '../stack-update-button';
 import FCD_CardAdder from '../card-adder';
 import FCD_Viewer from '../viewer';
+import FCD_GameForm from '../game-form';
 import { Reducer, initialState } from '.';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
@@ -48,14 +49,14 @@ class FCD_StackNavigator extends React.Component {
     return (
     <Provider store={store}>
       <MuiThemeProvider>
-        <Layout>
+        <div>
           < FCD_StackAdder />
           < FCD_StackList />
           < FCD_CardList />
           < FCD_CardAdder />
           < FCD_StackUpdateButton />
-          < FCD_Viewer />
-        </Layout>
+          < FCD_GameForm />
+        </div>
       </MuiThemeProvider>
     </Provider>
     )
