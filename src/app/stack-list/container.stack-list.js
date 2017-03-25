@@ -14,14 +14,8 @@ export function mapStateToProps(state, ownprops){
 
 export function mapDispatchToProps(dispatch){
   return {
-    onCreate: (name, key) => {
-      dispatch(Actions.Create( fromJS({name, cards:[], key }) ));
-    },
     onSelect: (selected, cards) => {
       dispatch(Actions.Select( fromJS({selected, cards}) ));
-    },
-    onCreate: (stack) => {
-      dispatch(Actions.Create( fromJS({stack}) ));
     }
   }
 }
