@@ -4,6 +4,7 @@ import Layout from 'material-ui/Layout';
 import FCD_StackList from '../stack-list';
 import FCD_CardList from '../card-list';
 import FCD_StackAdder from '../stack-adder';
+import FCD_StackUpdateButton from '../stack-update-button';
 import FCD_CardAdder from '../card-adder';
 import { Reducer, initialState } from '.';
 import { createStore, applyMiddleware } from 'redux'
@@ -51,6 +52,7 @@ class FCD_StackNavigator extends React.Component {
           < FCD_StackList />
           < FCD_CardList />
           < FCD_CardAdder />
+          < FCD_StackUpdateButton />
         </Layout>
       </MuiThemeProvider>
     </Provider>
