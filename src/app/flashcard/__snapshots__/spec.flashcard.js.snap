@@ -10,56 +10,58 @@ exports[`Full flash card renders correctly 1`] = `
   <div>
     <div>
       answer
-      <button
-        className="MuiButtonBase-buttonBase-3170508663 MuiButton-root-3593367901 MuiButton-raised-1110834863 MuiButton-raisedContrast-2539079880"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-49836587"
+      <div>
+        <button
+          className="MuiButtonBase-buttonBase-3170508663 MuiButton-root-3593367901 MuiButton-raised-1110834863 MuiButton-raisedContrast-2539079880"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
         >
-          Incorrect
-        </span>
-        <span
-          className="MuiTouchRipple-root-3868442396"
-        />
-      </button>
-      <button
-        className="MuiButtonBase-buttonBase-3170508663 MuiButton-root-3593367901 MuiButton-raised-1110834863"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-49836587"
+          <span
+            className="MuiButton-label-49836587"
+          >
+            Incorrect
+          </span>
+          <span
+            className="MuiTouchRipple-root-3868442396"
+          />
+        </button>
+        <button
+          className="MuiButtonBase-buttonBase-3170508663 MuiButton-root-3593367901 MuiButton-raised-1110834863"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="0"
+          type="button"
         >
-          Correct
-        </span>
-        <span
-          className="MuiTouchRipple-root-3868442396"
-        />
-      </button>
+          <span
+            className="MuiButton-label-49836587"
+          >
+            Correct
+          </span>
+          <span
+            className="MuiTouchRipple-root-3868442396"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </div>

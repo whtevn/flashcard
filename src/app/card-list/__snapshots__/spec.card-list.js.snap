@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The card list component Card list renders correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        q 1
+      </div>
+    </div>
+    <div>
+      <div>
+        a 1
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        q 2
+      </div>
+    </div>
+    <div>
+      <div>
+        a 2
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        q 3
+      </div>
+    </div>
+    <div>
+      <div>
+        a 3
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        q 4
+      </div>
+    </div>
+    <div>
+      <div>
+        a 4
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        q 5
+      </div>
+    </div>
+    <div>
+      <div>
+        a 5
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`The card list container mapping dispatch to props when a card is selected should dispatch the select action 1`] = `
+Array [
+  Array [
+    Object {
+      "payload": Object {
+        "cards": Array [
+          Object {
+            "answer": "a 1",
+            "key": 0,
+            "question": "q 1",
+          },
+          Object {
+            "answer": "a 2",
+            "key": 1,
+            "question": "q 2",
+          },
+          Object {
+            "answer": "a 3",
+            "key": 2,
+            "question": "q 3",
+          },
+          Object {
+            "answer": "a 4",
+            "key": 3,
+            "question": "q 4",
+          },
+          Object {
+            "answer": "a 5",
+            "key": 4,
+            "question": "q 5",
+          },
+        ],
+        "selected": 0,
+      },
+      "type": "Card List SELECT",
+    },
+  ],
+]
+`;
