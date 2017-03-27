@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field } from 'redux-form'
+const { DOM: { input, select, textarea } } = React
 import { RaisedButton, RadioButton, MenuItem, SelectField } from 'material-ui';
 import { RadioButtonGroup} from 'redux-form-material-ui';
 
@@ -8,8 +9,8 @@ class FCD_GameForm extends React.Component {
     const { handleSubmit, pristine, reset, submitting , onSubmit, stacks, selected} = this.props
     return (
 			<form onSubmit={handleSubmit(onSubmit)}>
-        <Field name="stack" component="select" value={selected}>
-            {stacks.map(stack => <Field component="option" name={`${stack.get('key')}`} key={stack.get('key')} value={stack.get('key')}>{stack.get('name')}</Field>)}
+        <Field name="stack" component="select" props={{value: selected}}>
+          {stacks.map(stack => <option name={`${stack.get('key')}`} key={stack.get('key')} value={stack.get('key')}>{stack.get('name')}</option>)}
         </Field>
         <Field name="perspective" component={RadioButtonGroup}>
           <RadioButton value="teacher" label="Teacher"/>

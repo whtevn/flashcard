@@ -15,7 +15,8 @@ export function mapStateToProps(state, ownprops){
   console.log(state.toJS());
   return {
     stacks: state.getIn(['data', 'stacks']),
-    selected: state.getIn(['data', 'selected'])
+    selected: state.getIn(['data', 'selected']),
+    values: {stack:state.getIn(['data', 'selected'])}
   }
 }
 
