@@ -2,6 +2,7 @@ import { fromJS } from 'immutable';
 import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux';
 import * as GameActions from './actions.game-form';
+import * as StackListActions from '../stack-list/actions.stack-list';
 import { default as Component } from './component.game-form'
 
 // http://redux-form.com/6.0.0-rc.1/examples/initializeFromState/
@@ -12,18 +13,20 @@ const newGameForm = reduxForm({
 
 export function mapStateToProps(state, ownprops){
   state = state.stacks || state
-  console.log(state.toJS());
+  const selected = state.getIn(['data', 'selected']);
   return {
-    stacks: state.getIn(['data', 'stacks']),
-    selected: state.getIn(['data', 'selected']),
-    values: {stack:state.getIn(['data', 'selected'])}
+    selected,
+    stacks: state.getIn(['data', 'stacks'])
   }
 }
 
 export function mapDispatchToProps(dispatch){
   return {
     onSubmit: ( card ) => {
-      dispatch(GameActions.Create( fromJS({card}) ));
+      dispatch(GameActions.Start( fromJS(card) ));
+    },
+    onSelect: (selected, cards) => {
+      dispatch(StackListActions.Select( fromJS({selected, cards}) ));
     }
   }
 }

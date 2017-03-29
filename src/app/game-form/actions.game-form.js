@@ -1,8 +1,16 @@
 const Type = "Game"
-export const CREATE = `${Type} START`;
-export const Create = ( payload ) => {
+export const START = `${Type} START`;
+export const Start = ( payload ) => {
   return {
-    type: CREATE,
+    type: START,
+    payload
+  }
+}
+
+export const QUIT = `${Type} QUIT`;
+export const Quit = ( payload ) => {
+  return {
+    type: QUIT,
     payload
   }
 }

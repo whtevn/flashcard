@@ -2,6 +2,7 @@ import React from 'react'
 import { Layout } from 'material-ui';
 import FCD_Editor from '../editor';
 import FCD_GameForm from '../game-form';
+import FCD_Viewer from '../viewer';
 import { RaisedButton } from 'material-ui';
 
 
@@ -16,9 +17,16 @@ class FCD_StackNavigator extends React.Component {
       body = < FCD_Editor /> ;
       goto = "game";
     }else{
-      buttonText = "go to editor";
-      body = < FCD_GameForm /> ;
-      goto = "navigator";
+      const game = this.props.game;
+      if(game){
+        buttonText = "quit game";
+        body = < FCD_Viewer />  ;
+        goto = "quit";
+      }else{
+        buttonText = "go to editor";
+        body = < FCD_GameForm />
+        goto = "navigator";
+      }
     }
     return (
         <div>
