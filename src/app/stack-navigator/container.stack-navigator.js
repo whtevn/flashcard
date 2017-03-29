@@ -15,6 +15,9 @@ export function mapStateToProps(state, ownprops){
 
 export function mapDispatchToProps(dispatch){
   return {
+    startGame: (game)=>{
+      dispatch(GameActions.Start(fromJS(game)))
+    },
     setViewing: (goto)=> {
       if(goto === 'quit'){
         dispatch(GameActions.Quit(goto))

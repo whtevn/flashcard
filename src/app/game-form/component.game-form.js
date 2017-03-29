@@ -8,9 +8,9 @@ class FCD_GameForm extends React.Component {
   constructor(props){
     const { selected, stacks} = props
     const stack = stacks.find(s=>s.get('key') === selected);
-    const name = stack.get('name');
+    const stackName = stack.get('name');
     const cards = stack.get('cards');
-    props.initialize({stack: selected, name, cards})
+    props.initialize({stack: selected, stackName, cards})
     super();
   }
 
@@ -25,7 +25,7 @@ class FCD_GameForm extends React.Component {
             cards, name, onSelect} = this.props
     return (
 			<form onSubmit={handleSubmit(onSubmit)}>
-        <Field name="name" component="hidden" />
+        <Field name="stackName" component="hidden" />
         <Field name="cards" component="hidden" />
         <Field name="stack" component="select" onChange={(e, val)=>{
           onSelect(val, this.props.stacks.find(stack=> {

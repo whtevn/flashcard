@@ -4,6 +4,7 @@ import FCD_Editor from '../editor';
 import FCD_GameForm from '../game-form';
 import FCD_Viewer from '../viewer';
 import { RaisedButton } from 'material-ui';
+import { fromJS } from 'immutable';
 
 
 class FCD_StackNavigator extends React.Component {
@@ -11,12 +12,13 @@ class FCD_StackNavigator extends React.Component {
     const search = location.search.substring(1);
     if(search==='') return
     const queryObject = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
-    console.log(
-			queryObject.cards,
-			queryObject.stackName,
-			queryObject.perspective,
-			queryObject.pin
-    );
+    this.props.startGame({
+      cards: fromJS(JSON.parse(atob(decodeURIComponent(queryObject.cards)))),
+			stackName: queryObject.stackName,
+			perspective: queryObject.perspective,
+			pin: queryObject.pin,
+      selected: 0
+    });
 
 		// dispatch(GameActions.Load(fromJs(queryObject)))
   }

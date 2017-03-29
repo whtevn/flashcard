@@ -6,18 +6,16 @@ import * as Actions from './actions.viewer';
 // connect component to store
 function mapStateToProps(state, ownprops){
   const stacks = state.stacks;
+  const game = state.navigation.getIn(['data', 'game'])
   state = state.viewer || state
-  const selected =state.getIn(['data', 'selected']);
-  const selectedStack =stacks.getIn(['data', 'selected']);
   return {
     // cards: getVisibleCards(state.cards, state.visibilityFilter)
-    cards: state.getIn(['data', 'cards']),
-    selected,
-    results: state.getIn(['data', 'results']),
-    pin: state.getIn(['data', 'pin']),
-    stackName: stacks.getIn(['data', 'stacks']).find((stack)=>{
-									return stack.get('key')===selectedStack
-								}).get('name')
+    selected: game.get('selected'),
+    cards: game.get('cards'),
+    results: game.get('results'),
+    pin: game.get('pin'),
+    stackName: game.get('stackName'),
+    perspective: game.get('perspective')
   }
 }
 

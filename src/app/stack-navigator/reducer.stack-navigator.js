@@ -28,7 +28,9 @@ export const navigatorReducer = (state = initialState, action) => {
     case GameActions.START:
       return state
               .setIn(['data', 'game'], action.payload)
-              .setIn(['data', 'pin'], generateId())
+              .setIn(['data', 'game', 'pin'], generateId())
+              .setIn(['data', 'viewing'], 'game')
+
     case GameActions.QUIT:
       return state
               .setIn(['data', 'game'], undefined)
