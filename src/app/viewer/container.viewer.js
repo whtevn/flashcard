@@ -5,12 +5,19 @@ import * as Actions from './actions.viewer';
 
 // connect component to store
 function mapStateToProps(state, ownprops){
+  const stacks = state.stacks;
   state = state.viewer || state
+  const selected =state.getIn(['data', 'selected']);
+  const selectedStack =stacks.getIn(['data', 'selected']);
   return {
     // cards: getVisibleCards(state.cards, state.visibilityFilter)
     cards: state.getIn(['data', 'cards']),
-    selected: state.getIn(['data', 'selected']),
-    results: state.getIn(['data', 'results'])
+    selected,
+    results: state.getIn(['data', 'results']),
+    pin: state.getIn(['data', 'pin']),
+    stackName: stacks.getIn(['data', 'stacks']).find((stack)=>{
+									return stack.get('key')===selectedStack
+								}).get('name')
   }
 }
 

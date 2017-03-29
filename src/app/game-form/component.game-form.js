@@ -28,7 +28,6 @@ class FCD_GameForm extends React.Component {
         <Field name="name" component="hidden" />
         <Field name="cards" component="hidden" />
         <Field name="stack" component="select" onChange={(e, val)=>{
-          console.log(val, this.props.stacks.toJS());
           onSelect(val, this.props.stacks.find(stack=> {
             return stack.get('key') === +(val)
           }).get('cards'))

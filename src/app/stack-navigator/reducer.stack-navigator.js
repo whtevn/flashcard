@@ -9,12 +9,26 @@ import { Reducer as newCardForm } from '../card-adder/reducer.card-adder.js';
 import * as NavActions from './actions.stack-navigator';
 import * as GameActions from '../game-form/actions.game-form';
 
+
+function dec2hex (dec) {
+  return ('0' + dec.toString(16)).substr(-2)
+}
+
+// generateId :: Integer -> String
+function generateId (len) {
+  var arr = new Uint8Array((len || 40) / 2)
+  window.crypto.getRandomValues(arr)
+  return Array.from(arr).map(dec2hex).join('')
+}
+
 export const navigatorReducer = (state = initialState, action) => {
   switch (action.type) {
     case NavActions.VIEW:
       return state.setIn(['data', 'viewing'], action.payload)
     case GameActions.START:
-      return state.setIn(['data', 'game'], action.payload)
+      return state
+              .setIn(['data', 'game'], action.payload)
+              .setIn(['data', 'pin'], generateId())
     case GameActions.QUIT:
       return state
               .setIn(['data', 'game'], undefined)
