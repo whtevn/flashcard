@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'material-ui/Button';
+import { RaisedButton } from 'material-ui';
 
 class FCD_Answer extends React.Component {
   render(){
@@ -8,8 +8,8 @@ class FCD_Answer extends React.Component {
     const onIncorrect = this.props.onIncorrect;
     const buttons = (onCorrect&&onIncorrect)?(
       <div>
-        <Button raised contrast onClick={ onIncorrect } >Incorrect</Button>
-        <Button raised onClick={ onCorrect } >Correct</Button>
+        <RaisedButton onClick={ onIncorrect } >Incorrect</RaisedButton>
+        <RaisedButton onClick={ onCorrect } >Correct</RaisedButton>
       </div>
     ):undefined;
     return (

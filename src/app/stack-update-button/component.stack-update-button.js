@@ -1,13 +1,13 @@
 import React from 'react'
-import Button from 'material-ui/Button';
+import { RaisedButton } from 'material-ui';
 
-class FCD_StackUpdateButton extends React.Component {
+class FCD_StackUpdateRaisedButton extends React.Component {
   render(){
     const { onSave, stackId, cards } = this.props;
     return (
-      <Button raised contrast onClick={ ()=>onSave({stackId, cards}) } >Update Stack</Button>
+      <RaisedButton onClick={ ()=>onSave({stackId, cards}) } >Update Stack</RaisedButton>
     )
   }
 };
-export default FCD_StackUpdateButton
+export default FCD_StackUpdateRaisedButton
 

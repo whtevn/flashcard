@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field } from 'redux-form'
-import Button from 'material-ui/Button';
+import { RaisedButton } from 'material-ui';
 
 class FCD_CardAdder extends React.Component {
   render (){
@@ -9,7 +9,7 @@ class FCD_CardAdder extends React.Component {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field type="text" name="question" placeholder="question" component="input" />
         <Field type="text" name="answer" placeholder="answer to question" component="input" />
-        <Button raised onClick={ handleSubmit(onSubmit) }>Create Card</Button>
+        <RaisedButton onClick={ handleSubmit(onSubmit) }>Create Card</RaisedButton>
       </form>
     )
   }
