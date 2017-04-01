@@ -27,8 +27,6 @@ export const navigatorReducer = (state = initialState, action) => {
       return state.setIn(['data', 'viewing'], action.payload)
     case GameActions.START:
       return state
-              .setIn(['data', 'game'], action.payload)
-              .setIn(['data', 'game', 'pin'], generateId())
               .setIn(['data', 'viewing'], 'game')
 
     case GameActions.QUIT:
@@ -46,7 +44,7 @@ export const form = formReducer.plugin({ newStackForm, newCardForm })
 export const initialState = {
   stacks: stackListState,
   cards: cardListState,
-  viewer: viewerState,
+  game: viewerState,
   navigation: fromJS({
     data: {
       viewing: 'navigator',
@@ -55,4 +53,4 @@ export const initialState = {
   })
 }
 
-export const Reducer = combineReducers({stacks: stackListReducer, cards: cardListReducer, form, viewer: viewerReducer, navigation: navigatorReducer})
+export const Reducer = combineReducers({stacks: stackListReducer, cards: cardListReducer, form, game: viewerReducer, navigation: navigatorReducer})

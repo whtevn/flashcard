@@ -27,21 +27,23 @@ class FCD_StackNavigator extends React.Component {
     let goto, buttonText, body
     const viewing = this.props.viewing;
     const setViewing = this.props.setViewing;
-    if(viewing === "navigator"){
-      buttonText = "play game" ;
-      body = < FCD_Editor /> ;
-      goto = "game";
-    }else{
-      const game = this.props.game;
-      if(game){
+    switch(viewing){
+      case "game":
         buttonText = "quit game";
         body = < FCD_Viewer />  ;
         goto = "quit";
-      }else{
+        break;
+      case "game-form":
         buttonText = "go to editor";
         body = < FCD_GameForm />
         goto = "navigator";
-      }
+        break;
+      case "navigator":
+      default:
+        buttonText = "play game" ;
+        body = < FCD_Editor /> ;
+        goto = "game-form";
+        break;
     }
     return (
         <div>
