@@ -5,12 +5,16 @@ import * as Actions from './actions.viewer';
 
 // connect component to store
 function mapStateToProps(state, ownprops){
-  state = state.viewer || state
+  const stacks = state.stacks;
+  const game = state.game;
   return {
     // cards: getVisibleCards(state.cards, state.visibilityFilter)
-    cards: state.getIn(['data', 'cards']),
-    selected: state.getIn(['data', 'selected']),
-    results: state.getIn(['data', 'results'])
+    selected: game.getIn(['data', 'selected']),
+    cards: game.getIn(['data', 'cards']),
+    results: game.getIn(['data', 'results']),
+    pin: game.getIn(['data', 'pin']),
+    stackName: game.getIn(['data', 'stackName']),
+    perspective: game.getIn(['data', 'perspective'])
   }
 }
 

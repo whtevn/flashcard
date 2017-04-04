@@ -22,8 +22,8 @@ export function mapStateToProps(state, ownprops){
 
 export function mapDispatchToProps(dispatch){
   return {
-    onSubmit: ( card ) => {
-      dispatch(GameActions.Start( fromJS(card) ));
+    onSubmit: ( game ) => {
+      dispatch(GameActions.Start( fromJS(game) ));
     },
     onSelect: (selected, cards) => {
       dispatch(StackListActions.Select( fromJS({selected, cards}) ));
